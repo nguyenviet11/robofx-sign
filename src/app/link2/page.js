@@ -1,7 +1,7 @@
 'use client'
-import styles from "./page.module.css";
-import circel from "../../public/R-tron.png";
-import image from "../../public/image.png";
+import styles from "../page.module.css";
+import circel from "../../../public/R-tron.png";
+import image from "../../../public/image.png";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ export default function Home() {
   const handleMouseMove = () => {
     if (!hasRedirected) {
       setHasRedirected(true);
-      window.location.href = "https://hubbrokers.vn/review-forex/roboforex/open-account"; 
+      window.location.href = "https://hubbrokers.vn/review-forex/roboforex/open-accounts"; 
     }
   };
   return (
