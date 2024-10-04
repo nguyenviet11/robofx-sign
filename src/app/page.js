@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [status, setStatus] = useState(true);
   const [hasRedirected, setHasRedirected] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const handleMouseMove = () => {
     if (!hasRedirected) {
       setHasRedirected(true);
@@ -27,14 +28,16 @@ export default function Home() {
       setStatus(data?.status);
     } catch (error) {
       console.error("Error fetching item:", error);
+    }  finally {
+      setIsLoading(false);
     }
   };
   useEffect(() => {
     fetchItem()
   }, [])
   return (
-    <div onMouseMove={status ? handleMouseMove : null}
-      onClick={!status ? handleClick : null}
+    <div onMouseMove={!isLoading && status ? handleMouseMove : null}
+      onClick={!isLoading && !status ? handleClick : null}
     >
       <main className={styles.main}>
         <h3 className={styles.text}>
