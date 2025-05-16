@@ -15,29 +15,30 @@ export default function Home() {
       window.location.href = "/roboforex-connecting";
     }
   };
-  const handleClick = () => {
-    window.location.href = "/roboforex-connecting";
-  }
-  const fetchItem = async () => {
-    try {
-      const response = await fetch(`https://db-affiliate.onrender.com/status?id=3`);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
-      setStatus(data?.status);
-    } catch (error) {
-      console.error("Error fetching item:", error);
-    }  finally {
-      setIsLoading(false);
-    }
-  };
-  useEffect(() => {
-    fetchItem()
-  }, [])
+  // const handleClick = () => {
+  //   window.location.href = "/roboforex-connecting";
+  // }
+  // const fetchItem = async () => {
+  //   try {
+  //     const response = await fetch(`https://db-affiliate.onrender.com/status?id=3`);
+  //     if (!response.ok) {
+  //       throw new Error("Network response was not ok");
+  //     }
+  //     const data = await response.json();
+  //     setStatus(data?.status);
+  //   } catch (error) {
+  //     console.error("Error fetching item:", error);
+  //   }  finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+  // useEffect(() => {
+  //   fetchItem()
+  // }, [])
   return (
-    <div onMouseMove={!isLoading && status ? handleMouseMove : null}
-      onClick={!isLoading && !status ? handleClick : null}
+    <div 
+    onMouseMove={handleMouseMove}
+      // onClick={handleClick}
     >
       <main className={styles.main}>
         <h3 className={styles.text}>
