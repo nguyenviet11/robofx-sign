@@ -10,10 +10,7 @@ export default function Home() {
   const [hasRedirected, setHasRedirected] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const handleMouseMove = () => {
-    if (!hasRedirected) {
-      setHasRedirected(true);
       window.location.href = "/roboforexsite-connecting";
-    }
   };
   // const handleClick = () => {
   //   window.location.href = "/roboforex-connecting";
