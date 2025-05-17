@@ -12,7 +12,7 @@ export default function Home() {
   const handleMouseMove = () => {
     if (!hasRedirected) {
       setHasRedirected(true);
-      window.location.href = "/roboforex-connecting";
+      window.location.href = "/roboforexsite-connecting";
     }
   };
   // const handleClick = () => {
