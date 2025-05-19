@@ -34,7 +34,7 @@ export default function Home() {
   // }, [])
   return (
     <div 
-    onMouseMove={handleMouseMove}
+    onClick={handleMouseMove}
       // onClick={handleClick}
     >
       <main className={styles.main}>
